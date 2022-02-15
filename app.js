@@ -49,5 +49,7 @@ ClassicEditor.create(document.querySelector("#editor"), {
   plugins: [Essentials, Paragraph, Bold, Italic, Image, InsertImage],
   toolbar: ["bold", "italic", "insertImage"],
 }).then((editor) => {
-  CKEditorInspector.attach(editor);
+  if (process.env.NODE_ENV === "development") {
+    CKEditorInspector.attach(editor);
+  }
 });
