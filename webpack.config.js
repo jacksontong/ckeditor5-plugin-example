@@ -9,7 +9,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   // https://webpack.js.org/configuration/entry-context/
   entry: "./app.js",
-  mode: "development",
 
   // https://webpack.js.org/configuration/output/
   output: {
