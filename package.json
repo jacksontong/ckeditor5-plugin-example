@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "build": "webpack --mode development"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^32.0.0",
+    "@ckeditor/ckeditor5-core": "^32.0.0",
+    "@ckeditor/ckeditor5-dev-utils": "^28.0.2",
+    "@ckeditor/ckeditor5-editor-classic": "^32.0.0",
+    "@ckeditor/ckeditor5-essentials": "^32.0.0",
+    "@ckeditor/ckeditor5-image": "^32.0.0",
+    "@ckeditor/ckeditor5-paragraph": "^32.0.0",
+    "@ckeditor/ckeditor5-theme-lark": "^32.0.0",
+    "@ckeditor/ckeditor5-ui": "^32.0.0",
+    "css-loader": "5",
+    "postcss-loader": "4",
+    "raw-loader": "4",
+    "style-loader": "2",
+    "webpack": "5",
+    "webpack-cli": "4"
+  },
+  "devDependencies": {
+    "@ckeditor/ckeditor5-inspector": "^3.0.0"
+  }
+}
