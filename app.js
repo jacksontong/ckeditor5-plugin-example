@@ -6,8 +6,11 @@ import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic";
 import Image from "@ckeditor/ckeditor5-image/src/image";
 import CKEditorInspector from "@ckeditor/ckeditor5-inspector";
 import Plugin from "@ckeditor/ckeditor5-core/src/plugin";
+import List from "@ckeditor/ckeditor5-list/src/list";
+import Heading from "@ckeditor/ckeditor5-heading/src/heading";
 import imageIcon from "@ckeditor/ckeditor5-core/theme/icons/image.svg";
 import ButtonView from "@ckeditor/ckeditor5-ui/src/button/buttonview";
+import SimpleBox from "./simplebox/simplebox";
 
 class InsertImage extends Plugin {
   init() {
@@ -46,8 +49,28 @@ class InsertImage extends Plugin {
 
 ClassicEditor.create(document.querySelector("#editor"), {
   // Add Image to the plugin list.
-  plugins: [Essentials, Paragraph, Bold, Italic, Image, InsertImage],
-  toolbar: ["bold", "italic", "insertImage"],
+  plugins: [
+    Essentials,
+    Paragraph,
+    Bold,
+    Italic,
+    Image,
+    InsertImage,
+    Heading,
+    List,
+    SimpleBox,
+  ],
+  toolbar: [
+    "heading",
+    "|",
+    "bold",
+    "italic",
+    "numberedList",
+    "bulletedList",
+    "|",
+    "insertImage",
+    "simpleBox",
+  ],
 }).then((editor) => {
   if (process.env.NODE_ENV === "development") {
     CKEditorInspector.attach(editor);
