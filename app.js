@@ -28,7 +28,7 @@ class InsertImage extends Plugin {
 
       // Callback executed once the image is clicked.
       view.on("execute", async () => {
-        const { value: imageUrl } = await Swal.fire({
+        const { value: imageUrl, isConfirmed } = await Swal.fire({
           title: "Enter image url",
           input: "text",
           inputLabel: "Image url",
@@ -41,15 +41,17 @@ class InsertImage extends Plugin {
         });
 
         editor.model.change((writer) => {
-          const imageElement = writer.createElement("imageBlock", {
-            src: imageUrl,
-          });
+          if (isConfirmed) {
+            const imageElement = writer.createElement("imageBlock", {
+              src: imageUrl,
+            });
 
-          // Insert the image in the current selection location.
-          editor.model.insertContent(
-            imageElement,
-            editor.model.document.selection
-          );
+            // Insert the image in the current selection location.
+            editor.model.insertContent(
+              imageElement,
+              editor.model.document.selection
+            );
+          }
         });
       });
 
