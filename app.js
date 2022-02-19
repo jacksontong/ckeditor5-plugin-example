@@ -11,6 +11,7 @@ import Heading from "@ckeditor/ckeditor5-heading/src/heading";
 import imageIcon from "@ckeditor/ckeditor5-core/theme/icons/image.svg";
 import ButtonView from "@ckeditor/ckeditor5-ui/src/button/buttonview";
 import SimpleBox from "./simplebox/simplebox";
+import Swal from "sweetalert2";
 
 class InsertImage extends Plugin {
   init() {
@@ -26,8 +27,18 @@ class InsertImage extends Plugin {
       });
 
       // Callback executed once the image is clicked.
-      view.on("execute", () => {
-        const imageUrl = prompt("Image URL");
+      view.on("execute", async () => {
+        const { value: imageUrl } = await Swal.fire({
+          title: "Enter image url",
+          input: "text",
+          inputLabel: "Image url",
+          showCancelButton: true,
+          inputValidator: (value) => {
+            if (!value) {
+              return "Please specify the image url";
+            }
+          },
+        });
 
         editor.model.change((writer) => {
           const imageElement = writer.createElement("imageBlock", {

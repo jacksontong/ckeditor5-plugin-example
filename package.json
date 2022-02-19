@@ -15,7 +15,8 @@
     "@ckeditor/ckeditor5-paragraph": "^32.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^32.0.0",
     "@ckeditor/ckeditor5-ui": "^32.0.0",
-    "@ckeditor/ckeditor5-widget": "^32.0.0"
+    "@ckeditor/ckeditor5-widget": "^32.0.0",
+    "sweetalert2": "^11.4.0"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-inspector": "^3.0.0",
