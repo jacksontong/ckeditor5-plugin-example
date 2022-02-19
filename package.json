@@ -13,6 +13,7 @@
     "@ckeditor/ckeditor5-image": "^32.0.0",
     "@ckeditor/ckeditor5-list": "^32.0.0",
     "@ckeditor/ckeditor5-paragraph": "^32.0.0",
+    "@ckeditor/ckeditor5-source-editing": "^32.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^32.0.0",
     "@ckeditor/ckeditor5-ui": "^32.0.0",
     "@ckeditor/ckeditor5-widget": "^32.0.0",
